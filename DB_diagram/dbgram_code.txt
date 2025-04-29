@@ -1,0 +1,57 @@
+table clients_accounts 
+{
+  id_client integer [primary key]
+  nume_client varchar2(255)
+  prenume_client varchar2(255)
+  password varchar2(255)
+  phone_number varchar2(14)
+}
+
+table book_reviews
+{
+  id_review integer [primary key]
+  id_client integer [not null, ref: > clients_accounts.id_client]
+  id_book integer [not null, ref: - books.id_book]
+  review_score integer [not null]
+  review_feedback varchar2(255)
+}
+
+
+table books
+{
+  id_book integer [primary key]
+  id_author integer [not null, ref: > authors.id_author]
+  id_genre integer [not null,ref: > books_genres.id_genre]
+  book_title varchar2(255)
+  book_description vartchar2(255)
+  book_reviews_score Number(1)
+  data_publicari datetime
+  notes_addnotations varcahr2(255)
+}
+
+table authors
+{
+  id_author integer [primary key]
+  nume_author varchar2(100) [not null]
+  prenume_author varchar2(100) [not null]
+  author_review integer 
+  Number_of_books_launched integer [not null]
+}
+
+table books_genres
+{
+  id_genre integer [primary key]
+  genre_name varchar2(255) [not null, unique]
+  genre_description varchar2(255) [not null]
+}
+
+table book_reservation_history 
+{
+  id_reservation integer [primary key]
+  id_client integer [not null,ref: > clients_accounts.id_client] 
+  id_book integer [not null, ref: - books.id_book]
+  date_reservation_start datestamp
+  date_reservation_return datestamp
+}
+/*facem un view cu data de retur*/
+
