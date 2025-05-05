@@ -1,0 +1,62 @@
+<!-- Dropdown -->
+<div class="shelf-controls">
+  <label for="bookSetSelect">Select Book Set:</label>
+  <select id="bookSetSelect"></select>
+</div>
+
+<!-- Shelf -->
+<div class="shelf-container">
+  <div class="shelf" id="shelf"></div>
+</div>
+
+<!-- Book Details -->
+<div class="book-details hidden" id="bookDetails">
+  <h3 id="detailTitle"></h3>
+  <p><strong>Author:</strong> <span id="detailAuthor"></span></p>
+  <p><strong>Genre:</strong> <span id="detailGenre"></span></p>
+  <p><strong>Publication Date:</strong> <span id="detailDate"></span></p>
+  <p><strong>Reserved:</strong> <span id="detailReserved"></span></p>
+  <p><strong>Description:</strong></p>
+  <p id="detailDescription"></p>
+</div>
+
+<!-- Reserve & Return Buttons -->
+<div style="text-align: center; margin-top: 20px">
+  <button id="reserveButton" class="reserve-button">Reserve This Book</button>
+  <button id="returnButton" class="return-button">Return This Book</button>
+</div>
+
+<!--  Review Section -->
+<div class="review-section hidden" id="reviewSection" style="text-align: center; max-width: 640px; margin: 30px auto">
+  <h4>Leave a Review</h4>
+  <textarea id="reviewText" rows="4" placeholder="Write your thoughts about this book..." class="review-textbox"></textarea>
+  <br />
+  <button id="postReviewButton" class="reserve-button" style="margin-top: 12px">Post Review</button>
+</div>
+
+<!-- Review Filter Dropdown -->
+<div class="review-filter">
+  <label for="reviewFilterSelect">Review Filter:</label>
+  <select id="reviewFilterSelect">
+    <option value="none">-- Select an option --</option>
+    <option value="all">See All Reviews</option>
+  </select>
+</div>
+
+<!-- Review Table -->
+<div class="review-table-container hidden" id="reviewTableContainer">
+  <table class="review-table">
+    <thead>
+      <tr>
+        <th>Review ID</th>
+        <th>Book Title</th>
+        <th>Client ID</th>
+        <th>Score</th>
+        <th>Feedback</th>
+      </tr>
+    </thead>
+    <tbody id="reviewTableBody">
+      <!-- Dynamically filled -->
+    </tbody>
+  </table>
+</div>

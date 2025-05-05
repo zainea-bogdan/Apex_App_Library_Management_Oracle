@@ -1,0 +1,306 @@
+/* Main layout styles */
+body {
+  background-color: #2b1c11;
+  background-image: linear-gradient(145deg, #2b1c11 0%, #1e140a 100%);
+  font-family: "Georgia", serif;
+  color: #ffeac5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Shelf container */
+.shelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3e2a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5);
+  border: 3px double #8b6c4f;
+}
+
+/* Each shelf row */
+.shelf-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #4a3220, #2e1d11);
+  padding: 12px 0;
+  border-top: 4px solid #8b6c4f;
+  border-bottom: 4px solid #1a0f07;
+  border-radius: 6px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Book card */
+.book {
+  width: 130px;
+  height: 180px;
+  margin: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: "Georgia", serif;
+  cursor: pointer;
+  color: #fff8e7;
+  background: linear-gradient(135deg, #6c4e31, #4a2d1a);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+  border: 2px groove #d9b278;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book:hover {
+  transform: scale(1.07);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Book top and bottom lines */
+.book::before,
+.book::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background-color: #d9b278;
+  opacity: 0.6;
+  border-radius: 1px;
+}
+
+.book::before {
+  top: 10px;
+}
+
+.book::after {
+  bottom: 10px;
+}
+
+/* Reserved book style */
+.book.reserved {
+  background: linear-gradient(135deg, #ffdbb5, #ffeac5);
+  color: #4a2e18;
+  border: 2px dashed #6c4e31;
+}
+
+/* Hidden book */
+.book.empty {
+  visibility: hidden;
+}
+
+/* Book info panel */
+.book-details {
+  margin: 50px auto 0 auto;
+  padding: 24px;
+  max-width: 640px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #4a3220, #2e1d11);
+  color: #ffeac5;
+  border: 3px double #d9b278;
+  font-family: "Georgia", serif;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.book-details.hidden {
+  display: none;
+}
+
+/* Dropdown for selecting shelf */
+.shelf-controls {
+  text-align: center;
+  margin: 30px 0 20px 0;
+  font-family: "Georgia", serif;
+  color: #ffeac5;
+  font-size: 16px;
+}
+
+.shelf-controls label {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.shelf-controls select {
+  background-color: #3e2a1a;
+  color: #ffeac5;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 2px solid #d9b278;
+  border-radius: 6px;
+  font-family: inherit;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile layout adjustments */
+@media screen and (max-width: 600px) {
+  .book {
+    width: 70px;
+    height: 130px;
+    font-size: 12px;
+  }
+
+  .shelf-controls select {
+    font-size: 14px;
+  }
+
+  .book-details {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
+
+/* Shared button style */
+.reserve-button,
+.return-button {
+  background-color: #8b6c4f;
+  color: #ffeac5;
+  border: 2px solid #ffeac5;
+  padding: 10px 16px;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.reserve-button:hover,
+.return-button:hover {
+  background-color: #a97b52;
+}
+
+/* Button container with animation */
+.reserve-button-wrapper {
+  text-align: center;
+  margin: 40px 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Review form */
+.review-section {
+  margin: 40px auto;
+  padding: 24px;
+  max-width: 640px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #4a3220, #2e1d11);
+  color: #ffeac5;
+  border: 3px double #d9b278;
+  font-family: "Georgia", serif;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px #000;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.review-section h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #ffeac5;
+}
+
+/* Review textarea */
+#reviewText {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #d9b278;
+  background-color: #3e2a1a;
+  color: #ffeac5;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  resize: vertical;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Post review button */
+#postReviewButton {
+  margin-top: 12px;
+  background-color: #8b6c4f;
+  color: #ffeac5;
+  border: 2px solid #ffeac5;
+  padding: 10px 16px;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#postReviewButton:hover {
+  background-color: #a97b52;
+}
+
+/* Review dropdown filter */
+.review-filter {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Georgia", serif;
+  color: #ffeac5;
+}
+
+.review-filter select {
+  background-color: #3e2a1a;
+  color: #ffeac5;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 2px solid #d9b278;
+  border-radius: 6px;
+  font-family: inherit;
+  margin-left: 10px;
+}
+
+/* Review table container */
+.review-table-container {
+  margin: 20px auto;
+  max-width: 960px;
+  background: linear-gradient(to bottom, #4a3220, #2e1d11);
+  border: 3px double #d9b278;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Review table layout */
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffeac5;
+  font-family: "Georgia", serif;
+}
+
+.review-table th,
+.review-table td {
+  padding: 10px;
+  border: 1px solid #8b6c4f;
+  text-align: left;
+}
+
+.review-table th {
+  background-color: #6c4e31;
+}
+
+.review-table-container.hidden {
+  display: none;
+}
