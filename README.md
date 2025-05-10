@@ -28,3 +28,7 @@ This is a web application created in Apex which serves as an interface for manag
 
 - Improved UI
 - New Functionalities (for example, new review filters)
+
+## Acknowledgements
+
+- Made in collaboration with [trismegistus34](https://github.com/trismegistus34) & [mariazorila4](https://github.com/mariazorila4).
