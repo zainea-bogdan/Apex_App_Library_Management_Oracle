@@ -1,5 +1,13 @@
 # Apex App Library Management Oracle
 
+<p align="center">
+  <img src="librayr logo apex.png" alt="Logo" width="600">
+</p>
+<p align="center">
+  <em>Created using Canva AI tools. I do not claim ownership of the visual elements.<br>
+  If this image presents an issue, please feel free to contact me.</em>
+</p>
+
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
